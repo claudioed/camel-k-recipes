@@ -1,0 +1,14 @@
+apiVersion: messaging.knative.dev/v1alpha1
+kind: Subscription
+metadata:
+  name: camel-source-display
+spec:
+  channel:
+    apiVersion: messaging.knative.dev/v1alpha1
+    kind: InMemoryChannel
+    name: messages
+  subscriber:
+    ref:
+      apiVersion: serving.knative.dev/v1
+      kind: Service
+      name: camel-event-display

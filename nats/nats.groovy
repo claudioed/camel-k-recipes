@@ -1,0 +1,6 @@
+from('nats://10.87.13.169:4222?topic=payments-processed')
+        .routeId('nats-receiver')
+        .log('BODY ${body.data}')
+        .transform().simple("Hello ${in.body.data} how are you?")
+        .log('BODY PARSED ${body}')
+        .to('log:info?multiline=true')
