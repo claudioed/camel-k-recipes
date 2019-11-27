@@ -2,7 +2,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.Exchange;
 import org.apache.camel.model.dataformat.JsonLibrary;
 
-public class PaymentsBrazil extends RouteBuilder {
+public class FromPaymentsBrazil extends RouteBuilder {
   @Override
   public void configure() throws Exception {
     from("knative:channel/brazil")
